@@ -1,4 +1,4 @@
-plateoApp.run(function ($rootScope, $window, $location, AuthenticationFactory) {
+plateoApp.run(['$rootScope', '$window', '$location', 'AuthenticationFactory', function ($rootScope, $window, $location, AuthenticationFactory) {
     // when the page refreshes, check if the user is already logged in
     AuthenticationFactory.check();
 
@@ -19,5 +19,5 @@ plateoApp.run(function ($rootScope, $window, $location, AuthenticationFactory) {
         if (AuthenticationFactory.isLogged == true && $location.path() == '/login') {
             $location.path('/');
         }
-    });
-});
+    }); 
+}]);

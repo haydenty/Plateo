@@ -1,6 +1,5 @@
-plateoApp.config(function($routeProvider, $httpProvider) {
+plateoApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
     $httpProvider.interceptors.push('TokenInterceptor');
-
     $routeProvider
         .when('/', {
             templateUrl: 'app/components/home/home.html',
@@ -44,4 +43,4 @@ plateoApp.config(function($routeProvider, $httpProvider) {
                 requiredLogin: false
             }
         })
-});
+}]);

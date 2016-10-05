@@ -1,12 +1,12 @@
-plateoApp.service('plateService2', function($resource, constants, AuthenticationFactory) {
+plateoApp.service('plateService2', ['$resource', 'constants', 'AuthenticationFactory', function($resource, constants, AuthenticationFactory) {
   return $resource({
 
   });
-});
+}]);
 
 
 
-plateoApp.service('plateService', function($q, $http, constants, userService, AuthenticationFactory) {
+plateoApp.service('plateService', ['$q', '$http', 'constants', 'userService', 'AuthenticationFactory', function($q, $http, constants, userService, AuthenticationFactory) {
   var baseUrl = constants.apis.plateoApiBaseUrl;
   var plateToShow = {}; //FIXME: Check to see if this is good practice to share across controllers, if not remove all references(getter, setter)
     return {
@@ -61,4 +61,4 @@ plateoApp.service('plateService', function($q, $http, constants, userService, Au
           });
         }
     };
-});
+}]);

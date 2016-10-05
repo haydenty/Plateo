@@ -1,4 +1,4 @@
-plateoApp.controller('loginController', function($scope, $window, $location, UserAuthFactory, AuthenticationFactory, userService) {
+plateoApp.controller('loginController', ['$scope', '$window', '$location', 'UserAuthFactory', 'AuthenticationFactory', 'userService', function($scope, $window, $location, UserAuthFactory, AuthenticationFactory, userService) {
       $scope.user = {
           username: '',
           password: '', //pass123 - bobmarley
@@ -75,4 +75,4 @@ plateoApp.controller('loginController', function($scope, $window, $location, Use
               $scope.errorMessage = "Passwords don't match, please try again";
           }
       };
-});
+}]);

@@ -1,4 +1,4 @@
-plateoApp.controller('mainController', function($scope, $location, UserAuthFactory) {
+plateoApp.controller('mainController', ['$scope', '$location', 'UserAuthFactory', function($scope, $location, UserAuthFactory) {
     var vm = $scope;
     vm.isActive = function (route) {
             return route === $location.path();
@@ -7,4 +7,4 @@ plateoApp.controller('mainController', function($scope, $location, UserAuthFacto
     vm.logout = function () {
         UserAuthFactory.logout();
     };
-});
+}]);

@@ -1,4 +1,4 @@
-plateoApp.controller('searchController', function ($scope, $location, plateService) {
+plateoApp.controller('searchController', ['$scope', '$location', 'plateService', function ($scope, $location, plateService) {
     var vm = $scope;
     vm.states = [
         { name: 'ALABAMA', abbreviation: 'AL'},
@@ -82,4 +82,4 @@ plateoApp.controller('searchController', function ($scope, $location, plateServi
       plateService.plateChoosen(plate); //NOTE: no promise needed just passing data between controllers
       $location.path('plate');
     };
-});
+}]);

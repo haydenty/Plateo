@@ -1,4 +1,4 @@
-plateoApp.controller('plateController', function($scope, plateService) {
+plateoApp.controller('plateController', ['$scope', 'plateService', function($scope, plateService) {
     var vm = $scope;
     vm.comments = [];
     vm.initialize = function() {
@@ -37,4 +37,4 @@ plateoApp.controller('plateController', function($scope, plateService) {
       }
     }
     vm.initialize();
-});
+}]);
