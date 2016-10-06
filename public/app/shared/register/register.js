@@ -1,3 +1,3 @@
-plateoApp.controller('registerController', function($scope) {
+plateoApp.controller('registerController', ['$scope', function($scope) {
     var vm = $scope;
-});
+}]);

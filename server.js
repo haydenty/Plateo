@@ -17,7 +17,7 @@ app.all('/*', function(req, res, next) {
   }
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/dist'));
 
 app.all('/api/v1/*', [require('./app/middlewares/validateRequest.js')]);
 app.use('/', require('./app/routes'));
@@ -37,5 +37,5 @@ var server = app.listen(app.get('port'), function() {
 });
 
 app.get('*', function(req, res) {
-	res.sendfile('./public/index.html');
+	res.sendfile('./dist/index.html');
 });

@@ -1,4 +1,4 @@
-plateoApp.factory('AuthenticationFactory', function ($window) {
+plateoApp.factory('AuthenticationFactory', ['$window', function ($window) {
     var auth = {
         isLogged: false,
         check: function () {
@@ -13,9 +13,9 @@ plateoApp.factory('AuthenticationFactory', function ($window) {
         }
     }
     return auth;
-});
+}]);
 
-plateoApp.factory('UserAuthFactory', function ($window, $location, $http, constants, AuthenticationFactory) {
+plateoApp.factory('UserAuthFactory', ['$window', '$location', '$http', 'constants', 'AuthenticationFactory', function ($window, $location, $http, constants, AuthenticationFactory) {
   var baseUrl = constants.apis.plateoApiBaseUrl;
     return {
         login: function (username, password) {
@@ -48,8 +48,8 @@ plateoApp.factory('UserAuthFactory', function ($window, $location, $http, consta
             });
         }
     }
-});
-plateoApp.factory('TokenInterceptor', function ($q, $window) {
+}]);
+plateoApp.factory('TokenInterceptor', ['$q', '$window', function ($q, $window) {
     return {
         request: function (config) {
             config.headers = config.headers || {};
@@ -65,4 +65,4 @@ plateoApp.factory('TokenInterceptor', function ($q, $window) {
             return response || $q.when(response);
         }
     };
-});
+}]);
