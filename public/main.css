@@ -1,3 +1,10 @@
 .my-group .form-control{
     width:50%;
 }
+
+
+.login {
+  max-width: 200px;
+  width: 80%;
+  min-width: 50px;
+}
