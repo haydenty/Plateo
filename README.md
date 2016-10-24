@@ -9,3 +9,9 @@ npm install <br />
 bower install <br />
 node server <br />
 navigate to localhost:3000
+
+Login using username: haydenty, password: Test123
+
+## TODO 
+* fix the users API endpoint so it doesn't return passwords
+* store passwords salted and crypted
