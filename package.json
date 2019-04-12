@@ -3,6 +3,9 @@
   "description": "App connecting others on the road via license plates",
   "version": "0.0.1",
   "auther": "Hayden Ty",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
     "body-parser": "^1.15.2",
     "bower": "^1.7.9",
